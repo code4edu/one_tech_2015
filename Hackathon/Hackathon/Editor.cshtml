@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["LokalUserDB"].ConnectionString;
+    string condition = "";
+    string code = "";
+    int idLev = -1;
+    int id = -1;
+    int level = -1;
+    if (Request.QueryString["idLev"] != null)
+    {
+        int.TryParse(Request.QueryString["idLev"], out idLev);
+    }
+    if (Request.QueryString["id"] != null)
+    {
+        int.TryParse(Request.QueryString["id"], out id);
+    }
+    if (Request.QueryString["level"] != null)
+    {
+        int.TryParse(Request.QueryString["level"], out level);
+    }
+    if (id > 0 && idLev > 0 && level>=0)
+    {
+        BLL.Logic.GetTaskById(ref condition, ref code, idLev, id, level);
+        //BLL.Logic.GetTaskById(ref condition, ref code, idLev,id);
+    }
+    else if (condition == "" || code == "")
+    {
+        Response.Redirect("~/Default.cshtml");
+    }
+    //code = "using System;using System.Collections.Generic;using System.Linq;using System.Text.RegularExpressions;namespace Rextester{public class Program{public static void Main(string[] args){int a=-1;a = int.Parse(Console.ReadLine());Console.WriteLine(a);}}}";
+   
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="~/src-min-noconflict/ace.js"></script>
+<script src="~/Scripts/compile.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            var output = $("#output2");
+            output.text('');
+
+
+            var program = "@code";
+            var to_compile = {
+                "LanguageChoice": "1",
+                "Program": program,
+                "Input": $("#Input").val(),
+                "CompilerArgs": ""
+            };
+            output.text("Waiting");
+            $.ajax({
+                url: "http://rextester.com/rundotnet/api",
+                type: "POST",
+                data: to_compile
+            }).done(function (data) {
+                output.text(data.Result);
+            }).fail(function (data) {
+                output.text("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
+            });
+
+        });
+    });
+</script>
+
+
+<div class="well">
+    @condition
+</div>
+
+@*<div id="code-result">
+    @code
+</div>*@
+
+
+
+<textarea id="code"  rows="20" cols="90">
+    //namespace всегда должен быть Rextester
+    //class всегда должен быть Program
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Text.RegularExpressions;
+        namespace Rextester
+        {
+        public class Program
+        {
+        public static void Main(string[] args)
+        {
+        //Your code goes here
+        
+        }
+        }
+        }
+</textarea>
+<div>Input:</div>
+<textarea id="Input" cols="1000" rows="5" style="border: 1px solid gray; width: 100%;"></textarea>
+
+
+<button id="run">Run</button>
+
+
+<div>
+    Your result:
+</div>
+<div class="well">
+    <p id="output"></p>
+</div>
+
+<div>
+    Correct result:
+</div>
+<div class="well">
+    <p id="output2"></p>
+</div>
+
+
+
+
+
+
+

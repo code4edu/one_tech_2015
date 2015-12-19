@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI.Interface", "UI.Interface", "{3EB18EE1-1700-40F5-B104-49A6A17F801F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{18818D4C-ED9F-4CBC-9F96-1FF91824DA0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{FE2E098E-AAE5-408C-8DAF-902B70D7F2B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{5678FC6B-1B78-4622-8F5F-33A4E2349C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{282618F2-9911-4281-BB8C-48D2A01CBBCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{42CA9E13-4BBC-4037-9485-B4B5C6D51460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Hackathon(2)", "http://localhost:59824", "{3A0AC48C-5C4E-47E3-8C24-168F8A923B82}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{282618f2-9911-4281-bb8c-48d2a01cbbce}|BLL.dll;{42CA9E13-4BBC-4037-9485-B4B5C6D51460}|DAL.dll;{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}|Entities.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59824"
+		Debug.AspNetCompiler.PhysicalPath = "Hackathon\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59824\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59824"
+		Release.AspNetCompiler.PhysicalPath = "Hackathon\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59824\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Hackathon\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{282618F2-9911-4281-BB8C-48D2A01CBBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282618F2-9911-4281-BB8C-48D2A01CBBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282618F2-9911-4281-BB8C-48D2A01CBBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282618F2-9911-4281-BB8C-48D2A01CBBCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CA9E13-4BBC-4037-9485-B4B5C6D51460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CA9E13-4BBC-4037-9485-B4B5C6D51460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CA9E13-4BBC-4037-9485-B4B5C6D51460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CA9E13-4BBC-4037-9485-B4B5C6D51460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DE593C-8CB5-4061-9CD1-9FB245A446E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0AC48C-5C4E-47E3-8C24-168F8A923B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0AC48C-5C4E-47E3-8C24-168F8A923B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0AC48C-5C4E-47E3-8C24-168F8A923B82}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0AC48C-5C4E-47E3-8C24-168F8A923B82}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A0AC48C-5C4E-47E3-8C24-168F8A923B82} = {3EB18EE1-1700-40F5-B104-49A6A17F801F}
+		{42CA9E13-4BBC-4037-9485-B4B5C6D51460} = {18818D4C-ED9F-4CBC-9F96-1FF91824DA0D}
+		{D4DE593C-8CB5-4061-9CD1-9FB245A446E6} = {FE2E098E-AAE5-408C-8DAF-902B70D7F2B6}
+		{282618F2-9911-4281-BB8C-48D2A01CBBCE} = {5678FC6B-1B78-4622-8F5F-33A4E2349C91}
+	EndGlobalSection
+EndGlobal

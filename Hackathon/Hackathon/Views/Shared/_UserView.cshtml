@@ -1,0 +1,29 @@
+﻿
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul id="menu">
+                        <li><a href="~/Default">Домашняя</a></li>
+                        <li><a href="~/Theory">Теория</a></li>
+                        <li><a href="~/Tasks">Задачи</a></li>
+                        <li><a href="~/About">О программе</a></li>
+                        <li><a href="~/Contact">Контакт</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @if (WebSecurity.IsAuthenticated)
+                    {
+                        <text>
+                            Здравствуйте, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
+                            <form id="logoutForm" action="~/Account/Logout" method="post">
+                                @AntiForgery.GetHtml()
+                                <a class="btn btn-primary" href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+                            </form>
+                        </text>
+                    }
+                </section>
+            </div>
+        </div>k

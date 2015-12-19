@@ -1,0 +1,67 @@
+﻿@using System.Web.Services.Description
+@{
+    new BLL.Logic(); 
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@Page.Title OneTech</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.3.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+    <header class="navbar navbar-inverse">
+        <div class="content-wrapper">
+            @if (WebSecurity.IsAuthenticated)
+            {
+
+                @RenderPage("~/Views/Shared/_UserView.cshtml");
+            }
+
+            else
+            {
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="~/Default">Домашняя</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                @RenderPage("~/Views/Shared/_Welcome.cshtml");
+
+            }
+
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year – OneTech</p>
+            </div>
+        </div>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+

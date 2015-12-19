@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Задача";
+}
+<h3>Первый уровень задач:</h3><br />
+<form>
+    <input type="button" value="1" class="btn btn-lg btn-default" onclick='location.href = "Editor.cshtml?idLev=1&id=1&level=0"'>
+    <input type="button" value="2" class="btn btn-lg btn-default" onclick='location.href = "Editor.cshtml?idLev=1&id=2&level=0"'>
+    <input type="button" value="3" class="btn btn-lg btn-default" onclick='location.href = "Editor.cshtml?idLev=1&id=3&level=0"'>
+
+</form>
+
+<h3>Второй уровень задач:</h3><br />
+
+<form>
+    <input type="button" value="1" class="btn btn-lg btn-info" onclick='location.href = "Editor.cshtml?idLev=2&id=1&level=1"'>
+    <input type="button" value="2" class="btn btn-lg btn-success" onclick='location.href = "Editor.cshtml?idLev=2&id=2&level=2"'>
+    <input type="button" value="3" class="btn btn-lg btn-danger" onclick='location.href = "Editor.cshtml?idLev=2&id=3&level=3"'>
+</form>
